@@ -5,6 +5,36 @@
 
 #define ARRAY_SIZE 10000000
 
+/* 
+PROBLEM STATEMENT
+Problem Statement:
+
+Write a C++ program to compute the sum of all elements in an integer array of size 100,000 using both:
+
+Serial computation.
+
+Parallel computation using OpenMP.
+
+Use an OpenMP parallel loop with a reduction clause to avoid race conditions in the parallel version.
+
+Tasks:
+
+Initialize the array with arbitrary integers (you can fill with rand() or a fixed pattern like all 1s).
+
+Compute and print the serial sum and its execution time.
+
+Compute and print the parallel sum and its execution time.
+
+Verify that both results match.
+
+Calculate and display the speedup: the ratio between serial time and parallel time. 
+​
+Bonus:
+Try larger array sizes (like 1 million, 10 million, etc.) and observe the performance trends.
+
+
+*/
+
 // Function for serial sum
 long long serial_sum(int arr[], int size) {
     long long sum = 0;
@@ -54,6 +84,15 @@ int main() {
     } else {
         printf("ERROR: Results don't match.\n");
     }
+
+    /* 
+    RESULTS: 
+    Array size: 10000000
+    Serial sum: 494578282, Time: 0.015180 seconds
+    Parallel sum: 494578282, Time: 0.005201 seconds
+    Speedup: 2.92 times
+    Results match - Correct sum calculated.
+    */
     
     free(array);
     return 0;
